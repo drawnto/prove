@@ -1,11 +1,11 @@
 {
-  "name": "prohe",
+  "name": "prove",
   "displayName": "PROHE",
   "description": "The Productivity-Reinforcement-Oriented Haptics Extension",
-  "publisher": "UncensorPat",
+  "publisher": "drawnto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/UncensorPat/prohe"
+    "url": "https://github.com/drawnto/prove"
   },
   "icon": "images/logo.png",
   "version": "0.1.0",
@@ -19,46 +19,46 @@
   "contributes": {
     "commands": [
       {
-        "command": "prohe.connect",
+        "command": "prove.connect",
         "title": "PROHE: Connect to server"
       },
       {
-        "command": "prohe.updatedevicelist",
+        "command": "prove.updatedevicelist",
         "title": "PROHE: Refresh devices"
       },
       {
-        "command": "prohe.disconnect",
+        "command": "prove.disconnect",
         "title": "PROHE: Disconnect from server"
       }
     ],
     "configuration": {
       "title": "PROHE",
       "properties": {
-        "prohe.typingWindow": {
+        "prove.typingWindow": {
           "type": "integer",
           "default": 5000,
           "description": "Length of the gap in typing (in milliseconds) before vibration decreases",
           "minimum": 0
         },
-        "prohe.vibrationMax": {
+        "prove.vibrationMax": {
           "type": "number",
           "default": 0.5,
           "description": "The maximum vibration intensity that can be achieved",
           "minimum": 0,
           "maximum": 1
         },
-        "prohe.vibrationStages": {
+        "prove.vibrationStages": {
           "type": "integer",
           "default": 10,
           "description": "The number of stages the vibration increases through",
           "minimum": 0
         },
-        "prohe.vibrationStageLength": {
+        "prove.vibrationStageLength": {
           "type": "integer",
           "default": 10000,
           "description": "Duration (in milliseconds) of each stage of vibration"
         },
-        "prohe.serverAddress": {
+        "prove.serverAddress": {
           "type": "string",
           "default": "ws://localhost:12345",
           "description": "Intiface Central server address to connect to"

@@ -31,7 +31,7 @@ var devices: Array<ButtplugClientDevice> = [];
 var deviceStatus: Map<ButtplugClientDevice, DeviceStatus> = new Map();
 
 function fetchConfig(): Configuration {
-	const settings = vscode.workspace.getConfiguration("prohe");
+	const settings = vscode.workspace.getConfiguration("prove");
 	const configObj: Configuration = {
 		serverAddress: settings.get('serverAddress', DEFAULT_SERVER_ADDRESS),
 		vibrationTimeout: settings.get('typingWindow', DEFAULT_VIBRATION_TIMEOUT),
@@ -132,7 +132,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	const connectCommand = vscode.commands.registerCommand('prohe.connect', () => {
+	const connectCommand = vscode.commands.registerCommand('prove.connect', () => {
 		vscode.window.setStatusBarMessage('PROHE: Attempting server connection...', MESSAGE_TIMEOUT);
 		let config = fetchConfig();
 		let potential = new ButtplugClient("PROHE");
@@ -161,9 +161,9 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 
-	const updateDeviceListCommand = vscode.commands.registerCommand('prohe.updatedevicelist', updateDeviceList);
+	const updateDeviceListCommand = vscode.commands.registerCommand('prove.updatedevicelist', updateDeviceList);
 
-	const disconnectCommand = vscode.commands.registerCommand('prohe.disconnect', () => {
+	const disconnectCommand = vscode.commands.registerCommand('prove.disconnect', () => {
 		if (client === null) {
 			vscode.window.setStatusBarMessage('PROHE: No server connected', MESSAGE_TIMEOUT);
 			return;

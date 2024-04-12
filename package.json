@@ -1,7 +1,7 @@
 {
   "name": "prove",
   "displayName": "PROVE",
-  "description": "The Productivity-Reinforcement-Oriented Haptics Extension",
+  "description": "The Productivity-Reinforcement-Oriented Volatics Extension",
   "publisher": "drawnto",
   "repository": {
     "type": "git",
@@ -34,35 +34,108 @@
     "configuration": {
       "title": "PROVE",
       "properties": {
-        "prove.typingWindow": {
+        "prove.minimumjudgementWindow": {
           "type": "integer",
-          "default": 5000,
-          "description": "Length of the gap in typing (in milliseconds) before vibration decreases",
+          "default": 100,
+          "description": "Minimum length of amount of seconds before you will be judged whether you typed or not.",
           "minimum": 0
         },
-        "prove.vibrationMax": {
-          "type": "number",
-          "default": 0.5,
-          "description": "The maximum vibration intensity that can be achieved",
+        "prove.maximumjudgementWindow": {
+          "type": "integer",
+          "default": 1000,
+          "description": "Maximum length of amount of seconds before you will be judged whether you typed or not.",
+          "minimum": 0
+        },
+        "prove.modeBad": {
+          "type": "string",
+          "default": "Beep",
+          "enum": ["Shock", "Vibrate", "Beep", "No Action"],
+          "description": "In case you **didn't** type, you will recieve that event. Beep does not support intensity."
+        },
+        "prove.minimumBadIntensity": {
+          "type": "integer",
+          "default": 1,
+          "description": "Minimum intensity if you are judged to **not** have typed.",
           "minimum": 0,
-          "maximum": 1
+          "maximum": 100
         },
-        "prove.vibrationStages": {
+        "prove.maximumBadIntensity": {
           "type": "integer",
-          "default": 10,
-          "description": "The number of stages the vibration increases through",
-          "minimum": 0
+          "default": 5,
+          "description": "Maximum intensity if you are judged to **not** have typed.",
+          "minimum": 0,
+          "maximum": 100
         },
-        "prove.vibrationStageLength": {
+        "prove.minimumBadLength": {
           "type": "integer",
-          "default": 10000,
-          "description": "Duration (in milliseconds) of each stage of vibration"
+          "default": 1,
+          "description": "Minimum length of the punishment if you are judged to **not** have typed.",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "prove.maximumBadLength": {
+          "type": "integer",
+          "default": 5,
+          "description": "Maximum length of the punishment if you are judged to **not** have typed.",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "prove.modeGood": {
+          "type": "string",
+          "default": "Vibrate",
+          "enum": ["Shock", "Vibrate", "Beep", "No Action"],
+          "description": "In case you did type, you will recieve that event. Beep does not support intensity."
+        },
+        "prove.minimumGoodIntensity": {
+          "type": "integer",
+          "default": 1,
+          "description": "Minimum intensity if you are judged to have typed.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "prove.maximumGoodIntensity": {
+          "type": "integer",
+          "default": 5,
+          "description": "Maximum intensity if you are judged to have typed.",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "prove.minimumGoodLength": {
+          "type": "integer",
+          "default": 1,
+          "description": "Minimum length of the punishment if you are judged to have typed.",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "prove.maximumGoodLength": {
+          "type": "integer",
+          "default": 5,
+          "description": "Maximum length of the punishment if you are judged to have typed.",
+          "minimum": 0,
+          "maximum": 30
         },
         "prove.serverAddress": {
           "type": "string",
-          "default": "ws://localhost:12345",
-          "description": "Intiface Central server address to connect to"
-        }
+          "default": "https://do.pishock.com/api/apioperate",
+          "description": "pishock server api end-point"
+        },
+        "prove.pishockUsername": {
+          "type": "string",
+          "default": "puppy73",
+          "description": "Username you use to log into PiShock.com. Can be found in the Account section of the website."
+        },
+        "prove.pishockApikey": {
+          "type": "string",
+          "default": "5c678926-d19e-4f86-42ad-21f5a76126db",
+          "description": "API Key generated on PiShock.com Can be found in the Account section of the website."
+        },        
+        "prove.pishockSharecode": {
+          "type": "string",
+          "default": "17519CD8GAP",
+          "description": "Sharecode generated on PiShock.com. Set safe limitations can when generating the code!"
+        },
+
+
       }
     }
   },

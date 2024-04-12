@@ -1,6 +1,6 @@
 # PROVE - Productivity-Reinforcement-Oriented Voltaic Extension
 
-Are you looking for a way to inspire productivity within your code development? Are the traditional KPIs of your product mommy not providing sufficient motivation to get what you need done? Maybe PROVE is the motivational muse you need.
+Are you looking for a way to inspire productivity within your code development? Are the traditional KPIs of your "product manager" uses not providing sufficient motivation to get things done? Maybe PROVE is the motivational mistress you need.
 
 PROVE is a Visual Studio Code extension that enables developers to enhance their coding experience with voltaic stimulation from supported devices.
 

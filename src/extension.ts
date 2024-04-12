@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { ButtplugClient, ButtplugClientDevice, ButtplugNodeWebsocketClientConnector } from 'buttplug';
+import fetch from 'node-fetch';
 
 const DEFAULT_SERVER_ADDRESS = "ws://localhost:12345";
 const DEFAULT_VIBRATION_TIMEOUT = 5000;

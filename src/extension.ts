@@ -18,12 +18,22 @@ interface DeviceStatus {
 	lastThresholdChange: Date,
 }
 interface Configuration {
+	minimumjudgementWindow: number,
+	maximumjudgementWindow: number,
+	modeBad: string,
+	minimumBadIntensity: number,
+	maximumBadIntensity: number,
+	minimumBadLength: number,
+	maximumBadLength: number,
+	modeGood: string,
+	minimumGoodIntensity: number,
+	maximumGoodIntensity: number,
+	minimumGoodLength: number,
+	maximumGoodLength: number,
 	serverAddress: string,
-	vibrationTimeout: number,
-	vibrationMax: number,
-	vibrationSteps: number,
-	vibrationStepLength: number
-	vibrationStepSize: number
+	pishockUsername: string,
+	pishockApikey: string,
+	pishockSharecode: string
 }
 
 var client: ButtplugClient | null = null;

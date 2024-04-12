@@ -133,9 +133,7 @@
           "type": "string",
           "default": "17519CD8GAP",
           "description": "Sharecode generated on PiShock.com. Set safe limitations can when generating the code!"
-        },
-
-
+        }
       }
     }
   },

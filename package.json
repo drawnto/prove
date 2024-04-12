@@ -1,6 +1,6 @@
 {
   "name": "prove",
-  "displayName": "PROHE",
+  "displayName": "PROVE",
   "description": "The Productivity-Reinforcement-Oriented Haptics Extension",
   "publisher": "drawnto",
   "repository": {
@@ -20,19 +20,19 @@
     "commands": [
       {
         "command": "prove.connect",
-        "title": "PROHE: Connect to server"
+        "title": "PROVE: Connect to server"
       },
       {
         "command": "prove.updatedevicelist",
-        "title": "PROHE: Refresh devices"
+        "title": "PROVE: Refresh devices"
       },
       {
         "command": "prove.disconnect",
-        "title": "PROHE: Disconnect from server"
+        "title": "PROVE: Disconnect from server"
       }
     ],
     "configuration": {
-      "title": "PROHE",
+      "title": "PROVE",
       "properties": {
         "prove.typingWindow": {
           "type": "integer",

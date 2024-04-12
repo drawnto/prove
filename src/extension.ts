@@ -48,7 +48,7 @@ function fetchConfig(): Configuration {
 function updateDeviceList() {
 	if (client === null) {
 		devices = [];
-		vscode.window.setStatusBarMessage('PROHE: No server connected', MESSAGE_TIMEOUT);
+		vscode.window.setStatusBarMessage('PROVE: No server connected', MESSAGE_TIMEOUT);
 		return;
 	}
 
@@ -127,15 +127,15 @@ function showError(context: string, err: any) {
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	console.debug('PROHE activated');
+	console.debug('PROVE activated');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	const connectCommand = vscode.commands.registerCommand('prove.connect', () => {
-		vscode.window.setStatusBarMessage('PROHE: Attempting server connection...', MESSAGE_TIMEOUT);
+		vscode.window.setStatusBarMessage('PROVE: Attempting server connection...', MESSAGE_TIMEOUT);
 		let config = fetchConfig();
-		let potential = new ButtplugClient("PROHE");
+		let potential = new ButtplugClient("PROVE");
 		const connector = new ButtplugNodeWebsocketClientConnector(config.serverAddress);
 		potential.on("error", (err) => showError("server connection", err));
 		const connectionTimer = setTimeout(() => showError(
@@ -147,7 +147,7 @@ export function activate(context: vscode.ExtensionContext) {
 				.then(() => {
 					clearTimeout(connectionTimer);
 					client = potential;
-					vscode.window.setStatusBarMessage('PROHE: Connected', MESSAGE_TIMEOUT);
+					vscode.window.setStatusBarMessage('PROVE: Connected', MESSAGE_TIMEOUT);
 				})
 				.then(updateDeviceList)
 				.then(() => context.subscriptions.push(textDocChange))
@@ -165,12 +165,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const disconnectCommand = vscode.commands.registerCommand('prove.disconnect', () => {
 		if (client === null) {
-			vscode.window.setStatusBarMessage('PROHE: No server connected', MESSAGE_TIMEOUT);
+			vscode.window.setStatusBarMessage('PROVE: No server connected', MESSAGE_TIMEOUT);
 			return;
 		}
 		client.disconnect().then(
 			() => {
-				vscode.window.setStatusBarMessage('PROHE: Server disconnected', MESSAGE_TIMEOUT);
+				vscode.window.setStatusBarMessage('PROVE: Server disconnected', MESSAGE_TIMEOUT);
 				const pos = context.subscriptions.indexOf(textDocChange);
 				if (pos > -1) {
 					context.subscriptions.splice(pos, 1);

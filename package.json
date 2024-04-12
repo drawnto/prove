@@ -49,7 +49,12 @@
         "prove.modeBad": {
           "type": "string",
           "default": "Beep",
-          "enum": ["Shock", "Vibrate", "Beep", "No Action"],
+          "enum": [
+            "Shock",
+            "Vibrate",
+            "Beep",
+            "No Action"
+          ],
           "description": "In case you **didn't** type, you will recieve that event. Beep does not support intensity."
         },
         "prove.minimumBadIntensity": {
@@ -83,7 +88,12 @@
         "prove.modeGood": {
           "type": "string",
           "default": "Vibrate",
-          "enum": ["Shock", "Vibrate", "Beep", "No Action"],
+          "enum": [
+            "Shock",
+            "Vibrate",
+            "Beep",
+            "No Action"
+          ],
           "description": "In case you did type, you will recieve that event. Beep does not support intensity."
         },
         "prove.minimumGoodIntensity": {
@@ -128,7 +138,7 @@
           "type": "string",
           "default": "5c678926-d19e-4f86-42ad-21f5a76126db",
           "description": "API Key generated on PiShock.com Can be found in the Account section of the website."
-        },        
+        },
         "prove.pishockSharecode": {
           "type": "string",
           "default": "17519CD8GAP",
@@ -168,6 +178,7 @@
   "dependencies": {
     "buttplug": "^3.1.1",
     "filereader": "^0.10.3",
+    "node-fetch": "^3.3.2",
     "ws": "^8.12.0"
   }
 }
